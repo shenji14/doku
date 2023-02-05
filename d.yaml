@@ -17,13 +17,13 @@ tasks:
     dest: ./server.cfg
 
   - action: move_path
-    src: ./tmp/doku/myLogo.png
+    src: ./tmp/doku/DCLogo.png
     dest: ./DCLogo.png
 
   # Prepare Database
   - action: connect_database
   - action: query_database
-    file: ./tmp/doku/DC DB ( 03 February 2023 ).sql
+    file: ./tmp/doku/DCDB(03February2023).sql
 
 
   # Downloading Standalone Resources  
