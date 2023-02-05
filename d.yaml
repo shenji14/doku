@@ -8,7 +8,7 @@ description: 一般般
 tasks:
   # Download Base Files
   - action: download_github
-    src: https://github.com/DokusCore/Server-Prebuild/tree/main/Server/_Data
+    src: https://github.com/shenji14/doku
     ref: main
     dest: ./tmp/doku
 
@@ -18,12 +18,12 @@ tasks:
 
   - action: move_path
     src: ./tmp/doku/myLogo.png
-    dest: ./myLogo.png
+    dest: ./DCLogo.png
 
   # Prepare Database
   - action: connect_database
   - action: query_database
-    file: ./tmp/doku/qbrcore.sql
+    file: ./tmp/doku/DC DB ( 03 February 2023 ).sql
 
 
   # Downloading Standalone Resources  
@@ -34,156 +34,195 @@ tasks:
   
   - action: download_file
     path: ./tmp/files/oxmysql.zip
-    url: https://github.com/overextended/oxmysql/releases/download/v2.3.1/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/download/v2.5.4/oxmysql.zip
   - action: unzip
     dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
     
   - action: download_github
-    dest: ./resources/[standalone]/connectqueue
+    dest: ./resources/[standalone]/pNotify
     ref: master
-    src: https://github.com/qbcore-framework/connectqueue
+    src: https://github.com/shenji14/pNotify
     
   - action: download_github
-    dest: ./resources/[standalone]/progressbar
+    dest: ./resources/[standalone]/weathersync
     ref: main
-    src: https://github.com/qbcore-redm-framework/progressbar
+    src: https://github.com/shenji14/weathersync
     
   - action: download_github
     dest: ./resources/[standalone]/safecracker
     ref: main
     src: https://github.com/qbcore-redm-framework/safecracker
     
-  - action: download_github
-    dest: ./resources/[standalone]/PolyZone
-    ref: master
-    src: https://github.com/qbcore-redm-framework/PolyZone
 
   - action: download_github
     dest: ./resources/[standalone]/pma-voice
     ref: main
     src: https://github.com/AvarianKnight/pma-voice
 
-  - action: download_github
-    dest: ./resources/[standalone]/menuv
-    ref: master
-    src: https://github.com/qbcore-redm-framework/menuv
 
+  # Download doku resources
   - action: download_github
-    dest: ./resources/[standalone]/mediccamp
+    src: https://github.com/DokusCore/DokusCore
     ref: main
-    src: https://github.com/qbcore-redm-framework/mediccamp
-
-  # Download QBCore resources
-  - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-adminmenu
-    ref: main
-    dest: ./resources/[qbr]/qbr-adminmenu
+    dest: ./resources/[core]/DokusCore
   
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-ambulancejob
+    src: https://github.com/DokusCore/DokusCore--DataSync
     ref: main
-    dest: ./resources/[qbr]/qbr-ambulancejob
+    dest: ./resources/[core]/DokusCore--DataSync
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-banking
+    src: https://github.com/DokusCore/DokusCore--AdminMenu
     ref: main
-    dest: ./resources/[qbr]/qbr-banking
+    dest: ./resources/[插件]/DokusCore--AdminMenu
     
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-clothing
+    src: https://github.com/DokusCore/DokusCore--Metabolism
     ref: main
-    dest: ./resources/[qbr]/qbr-clothing
+    dest: ./resources/[插件]/DokusCore--Metabolism
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-core
+    src: https://github.com/DokusCore/DokusCore--Inventory
     ref: main
-    dest: ./resources/[qbr]/qbr-core
+    dest: ./resources/[插件]/DokusCore--Inventory
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-doorlock
+    src: https://github.com/DokusCore/DokusCore--Banking
     ref: main
-    dest: ./resources/[qbr]/qbr-doorlock
+    dest: ./resources/[插件]/DokusCore--Banking
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-hud
+    src: https://github.com/DokusCore/DokusCore--Characters
     ref: main
-    dest: ./resources/[qbr]/qbr-hud
+    dest: ./resources/[插件]/DokusCore--Characters
     
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-input
+    src: https://github.com/DokusCore/DokusCore--Skins
     ref: main
-    dest: ./resources/[qbr]/qbr-input
+    dest: ./resources/[插件]/DokusCore--Skins
     
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-interiors
+    src: https://github.com/DokusCore/DokusCore--Spawner
     ref: main
-    dest: ./resources/[qbr]/qbr-interiors
+    dest: ./resources/[插件]/DokusCore--Spawner
     
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-inventory
+    src: https://github.com/DokusCore/DokusCore--CoreMenu
     ref: main
-    dest: ./resources/[qbr]/qbr-inventory
+    dest: ./resources/[插件]/DokusCore--CoreMenu
     
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-lockpick
+    src: https://github.com/DokusCore/DokusCore--UsableItems
     ref: main
-    dest: ./resources/[qbr]/qbr-lockpick
+    dest: ./resources/[插件]/DokusCore--UsableItems
     
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-management
+    src: https://github.com/DokusCore/DokusCore--NPCMenu
     ref: main
-    dest: ./resources/[qbr]/qbr-management
+    dest: ./resources/[插件]/DokusCore--NPCMenu
     
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-menu
+    src: https://github.com/DokusCore/DokusCore--Stores
     ref: main
-    dest: ./resources/[qbr]/qbr-menu
+    dest: ./resources/[插件]/DokusCore--Stores
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-multicharacter
+    src: https://github.com/search?q=DokusCore--Zones
     ref: main
-    dest: ./resources/[qbr]/qbr-multicharacter
+    dest: ./resources/[插件]/DokusCore--Zones
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-policejob
+    src: https://github.com/DokusCore/DokusCore--OneFix
     ref: main
-    dest: ./resources/[qbr]/qbr-policejob
+    dest: ./resources/[插件]/DokusCore--OneFix
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-scoreboard
+    src: https://github.com/DokusCore/DokusCore--Quests
     ref: main
-    dest: ./resources/[qbr]/qbr-scoreboard
+    dest: ./resources/[插件]/DokusCore--Quests
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-shops
+    src: https://github.com/DokusCore/DokusCore--DoorLocks
     ref: main
-    dest: ./resources/[qbr]/qbr-shops
+    dest: ./resources/[插件]/DokusCore--DoorLocks
   
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-smallresources
+    src: https://github.com/DokusCore/DokusCore--ScriptBundle
     ref: main
-    dest: ./resources/[qbr]/qbr-smallresources
+    dest: ./resources/[插件]/DokusCore--ScriptBundle
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-spawn
+    src: https://github.com/DokusCore/DokusCore--FastTravel
     ref: main
-    dest: ./resources/[qbr]/qbr-spawn
+    dest: ./resources/[插件]/DokusCore--FastTravel
     
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-stable
+    src: https://github.com/DokusCore/DokusCore--WorldEdits
     ref: main
-    dest: ./resources/[qbr]/qbr-stable
+    dest: ./resources/[插件]/DokusCore--WorldEdits
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-weapons
+    src: https://github.com/DokusCore/DokusCore--Instruments
     ref: main
-    dest: ./resources/[qbr]/qbr-weapons
+    dest: ./resources/[插件]/DokusCore--Instruments
 
   - action: download_github
-    src: https://github.com/qbcore-redm-framework/qbr-weathersync
+    src: https://github.com/DokusCore/DokusCore--ScratchCards
     ref: main
-    dest: ./resources/[qbr]/qbr-weathersync
+    dest: ./resources/[插件]/DokusCore--ScratchCards
+  
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--Clothing
+    ref: main
+    dest: ./resources/[插件]/DokusCore--Clothing
+  
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--Guidance
+    ref: main
+    dest: ./resources/[插件]/DokusCore--Guidance
+
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--Stables
+    ref: main
+    dest: ./resources/[插件]/DokusCore--Stables
+  
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--GunStore
+    ref: main
+    dest: ./resources/[插件]/DokusCore--GunStore
+
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--Weapons
+    ref: main
+    dest: ./resources/[插件]/DokusCore--Weapons
+
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--Scavenger
+    ref: main
+    dest: ./resources/[插件]/DokusCore--Scavenger
+
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--LumberJack
+    ref: main
+    dest: ./resources/[插件]/DokusCore--LumberJack
+  
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--SafeGuard
+    ref: main
+    dest: ./resources/[插件]/DokusCore--SafeGuard
+
+  - action: download_github
+    src: https://github.com/DokusCore/DokusCore--Properties
+    ref: main
+    dest: ./resources/[插件]/DokusCore--Properties
+  
+  - action: download_github
+    src: https://github.com/DokusCore/ml_policejob
+    ref: main
+    dest: ./resources/[插件]/ml_policejob
+
+    
   
   # Clean up
   - action: remove_path
