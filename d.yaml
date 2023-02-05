@@ -217,10 +217,7 @@ tasks:
     ref: main
     dest: ./resources/[插件]/DokusCore--Properties
   
-  - action: download_github
-    src: https://github.com/DokusCore/ml_policejob
-    ref: main
-    dest: ./resources/[插件]/ml_policejob
+
 
     
   
